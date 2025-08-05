@@ -6,21 +6,30 @@
 
     @if ($document)
         <div class="container mt-5">
-            <label for="" class="fw-bold">ID ({{$document->id}})</label>
-            <h3 class="bg-secondary text-light p-2 rounded text-center">{{ $document->name }}</h1>
-            <label for="" class="fw-bold">Category </label>
-            <h6 class="bg-secondary text-light p-2 rounded text-center">{{$document->category_name}}</h6>
-            <label for="" class="fw-bold">Description</label>
-            <div class="bg-light p-2 rounded">
-                {{ $document->description }}
+            <div class="row d-flex align-items-center">
+                <label for="" class="col-1 fw-bold ">ID ({{ $document->id }})</label>
+                <h3 class="col-11 bg-secondary text-light p-2 rounded text-center">{{ $document->name }}</h3>
+            </div>
+
+            <div class="row d-flex align-items-center">
+                <label for="" class="col-1 fw-bold">Category </label>
+                <h3 class="col-11 bg-secondary text-light p-2 rounded text-center">{{ $document->category_name }}</h3>
+            </div>
+
+            <div class="row d-flex align-items-center">
+                <label for="" class="col-1 fw-bold">Description</label>
+                <h3 class="col-11 bg-secondary text-light p-2 rounded text-center " style="min-height: 50px">
+                    {{ $document->description??'------' }}
+                </h3 >
             </div>
             <hr>
             <label for="" class="fw-bold">Files ({{ $document->files_count }})</label>
             {{-- files --}}
             <div class="d-flex flex-wrap gap-3">
                 @foreach ($document->files as $file)
-                    <a href="{{ asset($storage . $file->file )}}">
-                        <img src="{{ asset($storage . $file->file )}}" alt="" style="width: 150px; height: 150px; object-fit: cover;">
+                    <a href="{{ asset(urlencode($storage . $file->file)) }}">
+                        <img src="{{ asset(urlencode($storage . $file->file)) }}" alt=""
+                            style="width: 150px; height: 150px; object-fit: cover;">
                     </a>
                 @endforeach
             </div>

@@ -8,7 +8,12 @@
     <div class="container p-5">
 
         {{-- flash messages  --}}
-        @if (session('success'))
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                {{ $errors->first() }}
+            </div>
+        @elseif (session('success'))
+
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>

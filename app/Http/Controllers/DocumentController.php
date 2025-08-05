@@ -15,7 +15,7 @@ class DocumentController extends Controller
 {
     public function index()
     {
-        $documents = Document::withCategoryName()->get();;
+        $documents = Document::withCategoryName()->get();
         return view("documents.index ", ["documents" => $documents]);
     }
 

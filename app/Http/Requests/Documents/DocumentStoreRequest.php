@@ -24,7 +24,9 @@ class DocumentStoreRequest extends FormRequest
         return [
             "name" => "required|string|max:100",
             "description" => "nullable|string",
-            // "file" => "nullable|mimes:jpg,gif,jpeg,png,tiff,|max:10000", 
+            "file" => "nullable",
+            "file.*" => "mimes:jpg,gif,jpeg,png,tiff,|max:10000", 
+
             "category_id" => "required|exists:categories,id",
         ];
     }

@@ -11,8 +11,8 @@
             <h6 class="text-center text-decoration-underline mb-5">App Info</h6>
             <p class="text-center">App :Documents vault </p>
             <p class="text-center">version : 0.1-pre-alpha </p>
-            <p class="text-center">License : OpenSource ( <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL3</a>)</p>
-            <p class="text-center">Source code : <a href="https://github.com/khaledfathi/documents_vault">Github Repository</a>
+            <p class="text-center">License : OpenSource ( <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPL3</a>)</p>
+            <p class="text-center">Source code : <a href="https://github.com/khaledfathi/documents_vault" target="_blank">Github Repository</a>
             <p class="text-center">Description : Laravel Practice CRUD operations </p>
             <p class="text-center">Functionality : saving personal files in organized way </p>
         </div><hr>

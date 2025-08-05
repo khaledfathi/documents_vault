@@ -39,6 +39,9 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         $category = Category::findOrFail($id);
+        if($id == Category::defaultCategoryId()){
+            return  redirect()->route('categories.index')->withErrors('Can not delete default category.');
+        }
         // shift all documents to default category before deleting 
         if($category){
             Document::where('category_id', $id)->update(['category_id' => Category::defaultCategoryId()]);
