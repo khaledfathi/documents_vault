@@ -4,8 +4,8 @@ declare(strict_types= 1);
 
 namespace App\Http\Controllers;
 
+use App\Features\Documents\Infrastructure\Models\Document;
 use App\Models\Category;
-use App\Models\Document;
 use App\Models\File;
 use Illuminate\Http\Request;
 

@@ -1,13 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Controllers;
+namespace App\Features\Documents\Presentation\Http\Controllers; 
 
 use App\constants\Constants;
-use App\Http\Requests\Documents\DocumentStoreRequest;
-use App\Http\Requests\Documents\DocumentUpdateRequest;
+use App\Features\Documents\Infrastructure\Models\Document;
+use App\Features\Documents\Presentation\Http\Requests\DocumentStoreRequest;
+use App\Features\Documents\Presentation\Http\Requests\DocumentUpdateRequest;
+use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Document;
 use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 
