@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace App\Features\Documents\Infrastructure\Models; 
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\File;
 use Illuminate\Database\Eloquent\Builder;
 
 class Document extends Model

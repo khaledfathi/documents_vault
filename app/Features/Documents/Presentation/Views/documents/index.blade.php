@@ -18,7 +18,7 @@
         <a class="btn btn-primary mb-5" href="{{ route('documents.create') }}">New Document</a>
 
         {{-- Document table --}}
-        @if(!$documents->isEmpty())
+        @if($documents)
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -34,8 +34,8 @@
                         <tr>
                             <td>{{ $document->id }}</td>
                             <td>{{ $document->name }}</td>
-                            <td>{{ $document->category_name }}</td>
-                            <td>{{ $document->files_count }}</td>
+                            <td>{{ $document->categoryName }}</td>
+                            <td>{{ $document->filesCount }}</td>
                             <td class="d-flex gap-2 ">
                                 <a href="{{ route('documents.show', $document->id) }}" class="btn btn-secondary">view</a>
                                 <a href="{{ route('documents.edit', $document->id) }}" class="btn btn-warning">Edit</a>
