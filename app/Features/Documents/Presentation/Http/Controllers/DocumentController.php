@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 namespace App\Features\Documents\Presentation\Http\Controllers;
@@ -7,16 +6,17 @@ namespace App\Features\Documents\Presentation\Http\Controllers;
 use App\Constants\Constants;
 use App\Features\Documents\Application\Contracts\CreateDocumentContract;
 use App\Features\Documents\Application\Contracts\DeleteDocumentContract;
+use App\Features\Documents\Application\Contracts\EditDocumentContract;
 use App\Features\Documents\Application\Contracts\GetDocumentContract;
 use App\Features\Documents\Application\Contracts\StoreDocumentContract;
 use App\Features\Documents\Application\DTOs\DocumentFileDTO;
 use App\Features\Documents\Application\DTOs\DocumentsStoreInputDTO;
-use App\Features\Documents\Infrastructure\Models\Category;
 use App\Features\Documents\Infrastructure\Models\Document;
 use App\Features\Documents\Infrastructure\Models\File;
 use App\Features\Documents\Presentation\Http\Requests\DocumentStoreRequest;
 use App\Features\Documents\Presentation\Http\Requests\DocumentUpdateRequest;
 use App\Features\Documents\Presentation\Presenters\DocumentCreatePresenter;
+use App\Features\Documents\Presentation\Presenters\DocumentEditPresenter;
 use App\Features\Documents\Presentation\Presenters\DocumentIndexPresenter;
 use App\Features\Documents\Presentation\Presenters\DocumentShowPresenter;
 use App\Features\Documents\Presentation\Presenters\DocumentStorePresenter;
@@ -30,7 +30,8 @@ class DocumentController extends Controller
         private GetDocumentContract $getDocumentUsecase,
         private StoreDocumentContract $storeDocumentUsecase,
         private DeleteDocumentContract $deleteDocumentUsecase,
-        private CreateDocumentContract $getCategoryUsecase
+        private CreateDocumentContract $getCategoryUsecase,
+        private EditDocumentContract $editDocumentUsecase,
     ) {}
     public function index()
     {
@@ -81,11 +82,10 @@ class DocumentController extends Controller
 
     public function edit(string $id)
     {
-        return view('documents.edit', [
-            'document' => Document::where('documents.id', $id)->withCategoryName()?->first(),
-            'categories' => Category::all(),
-            'storage' => Constants::DOCUMENTS_PUBLIC_PATH,
-        ]);
+        $presenter = new DocumentEditPresenter();
+        $this->editDocumentUsecase->prepareEditForm((int)$id , $presenter);
+        return $presenter->handle(); 
+        
     }
 
     public function update(DocumentUpdateRequest $request, string $id)

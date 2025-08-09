@@ -40,7 +40,7 @@
                 <select id="category" class="form-control" aria-label="Default select example" name="category_id">
 
                     @foreach ($categories as $category)
-                        @if ($document->category_id == $category->id)
+                        @if ($document->categoryId == $category->id)
                             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                         @else
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -67,7 +67,7 @@
 
             {{-- Current files  --}}
             <div class="d-flex flex-wrap gap-3 my-3">
-                @foreach ($document->files as $file)
+                @foreach ($files as $file)
                     <div class="d-flex flex-column align-items-center">
                         <a href="{{ asset($storage . $file->file) }}">
                             <img src="{{ asset($storage . $file->file) }}" alt=""
