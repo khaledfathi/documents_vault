@@ -4,10 +4,9 @@ declare(strict_types= 1);
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Document;
-use App\Models\File;
-use Illuminate\Http\Request;
+use App\Features\Documents\Infrastructure\Models\Category;
+use App\Features\Documents\Infrastructure\Models\Document;
+use App\Features\Documents\Infrastructure\Models\File;
 
 class HomeController extends Controller
 {

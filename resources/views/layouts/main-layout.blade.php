@@ -23,10 +23,17 @@
                             <a class="nav-link @yield('home-active')" aria-current="page" href="{{route('home.index')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('documents-active')" href="{{route('documents.index')}}">Documents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @yield('categories-active')" href="{{route('categories.index')}}">Categories</a>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Records 
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="nav-link @yield('documents-active')" href="{{route('documents.index')}}">Documents</a></li>
+                                    <li><a class="nav-link @yield('categories-active')" href="{{route('categories.index')}}">Categories</a></li>
+                                    <li></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('about-app-active')" href="{{route('about-app.index')}}">About App</a>

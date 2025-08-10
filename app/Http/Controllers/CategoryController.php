@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Features\Documents\Infrastructure\Models\Category;
+use App\Features\Documents\Infrastructure\Models\Document;
 use App\Http\Requests\Categories\CategoryUpdateRequest;
-use App\Models\Category;
-use App\Models\Document;
 
 class CategoryController extends Controller
 {
