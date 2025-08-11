@@ -3,8 +3,8 @@ declare (strict_types=1) ;
 
 namespace App\Features\Documents\Application\Output;
 
-use App\Features\Documents\Domain\Entities\CategoryEntity;
-use App\Features\Documents\Domain\Entities\DocumentEntity;
+use App\Shared\Domain\Entities\CategoryEntity;
+use App\Shared\Domain\Entities\DocumentEntity;
 
 interface EditDocumentOutput {
     /**

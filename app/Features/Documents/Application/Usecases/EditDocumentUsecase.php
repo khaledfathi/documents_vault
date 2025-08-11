@@ -6,11 +6,11 @@ namespace App\Features\Documents\Application\Usecases;
 
 use App\Features\Documents\Application\Contracts\EditDocumentContract;
 use App\Features\Documents\Application\Output\EditDocumentOutput;
-use App\Features\Documents\Domain\Repositories\CategoryRepository;
-use App\Features\Documents\Domain\Repositories\DocumentRepository;
-use App\Features\Documents\Domain\Repositories\FileRepository;
+use App\Shared\Domain\Repositories\CategoryRepository;
+use App\Shared\Domain\Repositories\DocumentRepository;
+use App\Shared\Domain\Repositories\FileRepository;
 
-class EditDocumentUsecase implements EditDocumentContract
+final class EditDocumentUsecase implements EditDocumentContract
 {
     public function __construct(
         private DocumentRepository $documentRepository,

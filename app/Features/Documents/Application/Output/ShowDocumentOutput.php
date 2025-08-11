@@ -2,7 +2,7 @@
 declare (strict_types= 1);
 namespace App\Features\Documents\Application\Output;
 
-use App\Features\Documents\Domain\Entities\DocumentEntity;
+use App\Shared\Domain\Entities\DocumentEntity;
 
 interface ShowDocumentOutput {
     public function onSuccess(DocumentEntity $document):void; 

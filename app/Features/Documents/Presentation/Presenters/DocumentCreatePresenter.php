@@ -4,7 +4,7 @@ declare (strict_types= 1);
 namespace App\Features\Documents\Presentation\Presenters;
 
 use App\Features\Documents\Application\Output\CreateDocumentOutput;
-use App\Features\Documents\Domain\Entities\CategoryEntity;
+use App\Shared\Domain\Entities\CategoryEntity;
 use Illuminate\View\View;
 
 class DocumentCreatePresenter implements CreateDocumentOutput{

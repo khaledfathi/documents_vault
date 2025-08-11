@@ -2,12 +2,12 @@
 declare(strict_types= 1);
 namespace App\Features\Documents\Application\Output;
 
-use App\Features\Documents\Domain\Entities\CategoryEntity;
+use App\Shared\Domain\Entities\DocumentEntity;
 
 interface CreateDocumentOutput{
     /**
      * 
-     * @param array<CategoryEntity> $output
+     * @param array<DocumentEntity> $output
      * @return void
      */
     public function ReceiveCategories(array $categories):void;

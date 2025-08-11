@@ -6,9 +6,9 @@ namespace App\Features\Documents\Application\Usecases;
 use App\Features\Documents\Application\Contracts\GetDocumentContract;
 use App\Features\Documents\Application\Output\GetAllDocumentOutput;
 use App\Features\Documents\Application\Output\ShowDocumentOutput;
-use App\Features\Documents\Domain\Repositories\DocumentRepository;
+use App\Shared\Domain\Repositories\DocumentRepository;
 
-class GetDocumentUsecase implements GetDocumentContract {
+final class GetDocumentUsecase implements GetDocumentContract {
 
     public function __construct(
         private DocumentRepository $documentRepository,

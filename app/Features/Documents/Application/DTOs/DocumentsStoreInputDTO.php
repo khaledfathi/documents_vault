@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace App\Features\Documents\Application\DTOs;
+namespace App\Features\Documents\Application\DTOs; 
 
 class  DocumentsStoreInputDTO {
     /**

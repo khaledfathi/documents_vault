@@ -2,7 +2,7 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-
-    // ---------------  EDITED BY DEVELOPER ---------------
-    App\Features\Documents\Infrastructure\Providers\DocumentServiceProvider::class,
+    App\Features\Documents\Infrastrcture\Providers\DocumentServiceProvider::class,
+    App\Features\Categories\Infrastrcture\Providers\CategoryServiceProvider::class,
+    App\Shared\Infrastructure\Providers\SharedServiceProvider::class,
 ];

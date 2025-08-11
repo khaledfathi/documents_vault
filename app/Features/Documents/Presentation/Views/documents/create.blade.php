@@ -1,6 +1,7 @@
 @extends ('layouts.main-layout')
 @section('title', 'Create Document')
 @section('document-active', 'active')
+@section('document-drop-menu-active', 'text-dark')
 
 @section('content')
 

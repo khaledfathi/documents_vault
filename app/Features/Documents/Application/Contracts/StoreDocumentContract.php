@@ -8,4 +8,6 @@ use App\Features\Documents\Application\Output\StoreDocumentOutput;
 
 interface StoreDocumentContract {
     public function store( DocumentsStoreInputDTO $documentDTO , StoreDocumentOutput $output):void;
+    
+
 }

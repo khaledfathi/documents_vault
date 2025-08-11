@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Documents\Presentation\Http\Controllers;
+namespace App\Features\Documents\Presentation\Http\Controllers; 
 
-use App\Constants\Constants;
 use App\Features\Documents\Application\Contracts\CreateDocumentContract;
 use App\Features\Documents\Application\Contracts\DeleteDocumentContract;
 use App\Features\Documents\Application\Contracts\EditDocumentContract;
@@ -13,7 +12,6 @@ use App\Features\Documents\Application\Contracts\StoreDocumentContract;
 use App\Features\Documents\Application\Contracts\UpdateDocumentContract;
 use App\Features\Documents\Application\DTOs\DocumentFileDTO;
 use App\Features\Documents\Application\DTOs\DocumentsStoreInputDTO;
-use App\Features\Documents\Domain\Entities\DocumentEntity;
 use App\Features\Documents\Presentation\Http\Requests\DocumentStoreRequest;
 use App\Features\Documents\Presentation\Http\Requests\DocumentUpdateRequest;
 use App\Features\Documents\Presentation\Presenters\DocumentCreatePresenter;
@@ -24,6 +22,7 @@ use App\Features\Documents\Presentation\Presenters\DocumentStorePresenter;
 use App\Features\Documents\Presentation\Presenters\DocumentUpdatePresenter;
 use App\Features\Documents\Presentation\Presenters\DocumnetDestroyPresenter;
 use App\Http\Controllers\Controller;
+use App\Shared\Domain\Entities\DocumentEntity;
 
 class DocumentController extends Controller
 {
@@ -50,6 +49,7 @@ class DocumentController extends Controller
     }
 
     public function store(DocumentStoreRequest $request)
+    
     {
         //recieve files 
         $files = array_map(
@@ -65,7 +65,7 @@ class DocumentController extends Controller
         $dto = new DocumentsStoreInputDTO(
             $request->name,
             $request->category_id,
-            $request->description,
+            $request->description ?? '',
             $files ?? [],
         );
 

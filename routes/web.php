@@ -1,9 +1,9 @@
 <?php
 
+use App\Features\AboutApp\Presentation\Http\Controller\AboutAppController;
+use App\Features\Categories\Presentation\Http\Controller\CategoryController;
 use App\Features\Documents\Presentation\Http\Controllers\DocumentController;
-use App\Http\Controllers\AboutAppController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
+use App\Features\Home\Presentation\Http\Controller\HomeController;
 use Illuminate\Support\Facades\Route;
 
 

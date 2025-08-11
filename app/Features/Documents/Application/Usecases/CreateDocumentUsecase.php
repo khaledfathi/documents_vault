@@ -5,9 +5,9 @@ namespace App\Features\Documents\Application\Usecases;
 
 use App\Features\Documents\Application\Contracts\CreateDocumentContract;
 use App\Features\Documents\Application\Output\CreateDocumentOutput;
-use App\Features\Documents\Domain\Repositories\CategoryRepository;
+use App\Shared\Domain\Repositories\CategoryRepository;
 
-class CreateDocumentUsecase implements CreateDocumentContract{
+final class CreateDocumentUsecase implements CreateDocumentContract{
 
     public function __construct(
         public CategoryRepository $categoryRepository

@@ -1,6 +1,8 @@
 @extends ('layouts.main-layout')
 @section('title', 'Edit Document')
 @section('document-active', 'active')
+@section('document-drop-menu-active', 'text-dark')
+
 @section('scripts')
     <script src="{{ asset('js/documents/edit.js') }}"></script>
 @endsection

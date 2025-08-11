@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Features\Documents\Presentation\Presenters;
 
 use App\Features\Documents\Application\Output\GetAllDocumentOutput;
-use App\Features\Documents\Domain\Entities\DocumentEntity;
+use App\Shared\Domain\Entities\DocumentEntity;
 use Illuminate\View\View;
 
 class DocumentIndexPresenter implements GetAllDocumentOutput{

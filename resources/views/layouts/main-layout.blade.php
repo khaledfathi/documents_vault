@@ -24,7 +24,7 @@
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                <button class="btn dropdown-toggle @yield('document-drop-menu-active' , 'text-secondary') " type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Records 
                                 </button>

@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace App\Features\Documents\Presentation\Presenters;
 
-use App\Constants\Constants;
 use App\Features\Documents\Application\Output\EditDocumentOutput;
-use App\Features\Documents\Domain\Entities\CategoryEntity;
-use App\Features\Documents\Domain\Entities\DocumentEntity;
-use App\Features\Documents\Domain\Entities\FileEntity;
+use App\Shared\Domain\Constants\Constants;
+use App\Shared\Domain\Entities\CategoryEntity;
+use App\Shared\Domain\Entities\DocumentEntity;
+use App\Shared\Domain\Entities\FileEntity;
 use Illuminate\View\View;
 
 class DocumentEditPresenter implements EditDocumentOutput {
@@ -19,14 +19,11 @@ class DocumentEditPresenter implements EditDocumentOutput {
         'storage' => Constants::DOCUMENTS_PUBLIC_PATH,
         'error' => null,
         'serverError' => null,
-        // 'document' => document::where('documents.id', $id)->withcategoryname()?->first(),
-        // 'categories' => category::all(),
-        // 'storage' => constants::documents_public_path,
     ];
     /**
      *
      * @param DocumentEntity $documents
-     * @param array<FileEntity> $documents
+     * @param array<FileEntity> $files
      * @param array<CategoryEntity> $categories
      * @return void
      */
