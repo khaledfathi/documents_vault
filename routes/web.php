@@ -1,16 +1,16 @@
 <?php
 
-use App\Http\Controllers\AboutAppController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\HomeController;
+use App\Features\AboutApp\Presentation\Http\Controller\AboutAppController;
+use App\Features\Categories\Presentation\Http\Controller\CategoryController;
+use App\Features\Documents\Presentation\Http\Controllers\DocumentController;
+use App\Features\Home\Presentation\Http\Controller\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::resource('/about-app', AboutAppController::class )->only(['index']);
-route::resource('documents', DocumentController::class);
+Route::resource('documents', DocumentController::class);
 Route::resource('categories', CategoryController::class)->except(['show']);
 
 
