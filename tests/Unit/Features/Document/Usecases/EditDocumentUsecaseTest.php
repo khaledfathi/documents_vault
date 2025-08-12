@@ -25,16 +25,14 @@ class  EditDocumentUsecaseTest extends TestCase
         $file = Mockery::mock(new FileEntity(1, 1, 'file'));
         $mockEditDocumentOutput= Mockery::mock(EditDocumentOutput::class);
         $category = new CategoryEntity(1,'name', 'desc');
-        $document = Mockery::mock(
-            new DocumentEntity(
+        $document = new DocumentEntity(
                 1,
                 1,
                 'catName',
                 'name', 
                 'desc', 
                 1, 
-                [$file])
-        );
+                [$file]);
 
         $mockDocumentRepo->shouldReceive('show')
             ->once()

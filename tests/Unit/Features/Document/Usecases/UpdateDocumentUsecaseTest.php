@@ -9,7 +9,7 @@ class UpdateDocumentUsecaseTest extends TestCase
     /**
      * A basic unit test example.
      */
-    public function test_example(): void
+    public function test_update_document_x(): void
     {
         $this->assertTrue(true);
     }

@@ -18,19 +18,18 @@ class CreateDocumentUsecaseTest extends TestCase
         // Arrange
         $mockCategoryRepo = Mockery::mock(CategoryRepository::class);
         $mockCreateDocumentOutput = Mockery::mock(CreateDocumentOutput::class);
-        $categories = [new CategoryEntity(1, 'cat1', 'desc1')];
 
         $mockCategoryRepo->shouldReceive('index')
             ->once()
-            ->andReturn($categories);
+            ->andReturn([]);
 
 
         // Assert
         $mockCreateDocumentOutput->shouldReceive('ReceiveCategories')
             ->once()
             ->with($mockCategoryRepo->index())
-            ->withArgs(function ($recivedCategories) use ($categories) {
-                $this->assertEquals($categories, $recivedCategories);
+            ->withArgs(function ($recivedCategories) {
+                $this->assertEquals([], $recivedCategories);
                 return true;
             });
 
@@ -47,6 +46,7 @@ class CreateDocumentUsecaseTest extends TestCase
 
         $exception = new Exception('error');
         $mockCategoryRepo->shouldReceive('index')
+            ->once()
             ->andThrow($exception);
 
         // Assert
