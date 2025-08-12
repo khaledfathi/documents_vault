@@ -1,8 +1,11 @@
 # Documents Vault Web App 
 
 ### Config .env
-- tested with SQlite ; got to .env file , find and change this section 
-- it's full depend on Eloquent ORM , feel free to use change to any DBMS
+
+it's full depend on Eloquent ORM , feel free to use change to any DBMS .
+
+tested with SQlite ; got to .env file , find and change this section :
+
 ```env
     DB_CONNECTION=sqlite
     # DB_HOST=127.0.0.1
@@ -13,6 +16,7 @@
 ```
 
 ### Install
+
 ```bash
     cd documents_vault
     composer install
@@ -23,11 +27,13 @@
 ```
 
 ### Run  
+
 ```bash
     php artisan serv 
 ```
 
-- for wildcard and custom port 
+for wildcard and custom port : 
+
 ```bash
     php artisan serv  --host 0.0.0.0 --port <port number>
 ```
