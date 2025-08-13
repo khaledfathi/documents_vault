@@ -13,4 +13,10 @@ class UpdateDocumentUsecaseTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        \Mockery::close(); // Manually closing mockery if needed
+    }
 }

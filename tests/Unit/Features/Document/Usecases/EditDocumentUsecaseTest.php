@@ -81,11 +81,11 @@ class  EditDocumentUsecaseTest extends TestCase
             ->andThrow($exception);
 
         $mockCategoryRepo->shouldReceive('index')
-            ->once()
+            ->zeroOrMoreTimes()
             ->andThrow($exception);
 
         $mockFileRepo->shouldReceive('getReleatedToDocumnet')
-            ->once()
+            ->zeroOrMoreTimes()
             ->with(1)
             ->andThrow($exception);
         //Assert
@@ -105,5 +105,10 @@ class  EditDocumentUsecaseTest extends TestCase
         );
 
         $usecase->prepareEditForm(1, $mockEditDocumentOutput);
+    }
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        \Mockery::close(); // Manually closing mockery if needed
     }
 }

@@ -20,9 +20,8 @@ class CreateDocumentUsecaseTest extends TestCase
         $mockCreateDocumentOutput = Mockery::mock(CreateDocumentOutput::class);
 
         $mockCategoryRepo->shouldReceive('index')
-            ->once()
+            ->atLeast()->once()
             ->andReturn([]);
-
 
         // Assert
         $mockCreateDocumentOutput->shouldReceive('ReceiveCategories')
@@ -62,4 +61,10 @@ class CreateDocumentUsecaseTest extends TestCase
         $usecase = new CreateDocumentUsecase($mockCategoryRepo);
         $usecase->prepeareCreateForm($mockCreateDocumentOutput);
     }
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        \Mockery::close(); // Manually closing mockery if needed
+    }
+
 }

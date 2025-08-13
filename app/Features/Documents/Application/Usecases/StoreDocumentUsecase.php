@@ -27,7 +27,7 @@ final class StoreDocumentUsecase  implements StoreDocumentContract
 
         // store|output
         try {
-            $output->onSucess($this->documentRepository->store($document, $fileNamesList));
+            $output->onSuccess($this->documentRepository->store($document, $fileNamesList));
         } catch (\Exception $e) {
             $output->onFailure($e->getMessage());
         }

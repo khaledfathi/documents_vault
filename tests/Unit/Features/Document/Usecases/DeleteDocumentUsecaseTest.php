@@ -88,4 +88,10 @@ class DeleteDocumentUsecaseTest extends TestCase
         $usecase->delete(1, $mockDeleteDocumentOutput);
 
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        \Mockery::close(); // Manually closing mockery if needed
+    }
 }

@@ -33,4 +33,10 @@ class GetDocumentUsecaseTest extends TestCase
         $usecase = new GetDocumentUsecase($mockGetDocumentRepo);
         $usecase->all($mockGetAllDocumentOutput);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        \Mockery::close(); // Manually closing mockery if needed
+    }
 }
