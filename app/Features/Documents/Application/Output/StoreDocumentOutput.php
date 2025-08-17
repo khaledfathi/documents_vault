@@ -7,5 +7,6 @@ use App\Shared\Domain\Entities\DocumentEntity;
 
 interface StoreDocumentOutput {
     public function onSuccess(DocumentEntity $document): void;
+
     public function onFailure(string $error): void;
 }

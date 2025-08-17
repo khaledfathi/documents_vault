@@ -32,6 +32,7 @@ tested with SQlite ; got to .env file , find and change this section :
     php artisan serv 
 ```
 
+
 for wildcard and custom port : 
 
 ```bash

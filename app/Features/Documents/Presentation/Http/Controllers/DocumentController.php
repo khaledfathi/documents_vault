@@ -49,6 +49,7 @@ class DocumentController extends Controller
     }
 
     public function store(DocumentStoreRequest $request)
+
     {
         //recieve files 
         $files = array_map(
