@@ -13,7 +13,8 @@ class DocumentEntity
      * @param  ?string $categoryName
      * @param  ?string $name
      * @param  ?string $description
-     * @param  ?string $filesCount
+     * @param  ?int $filesCount
+
      * @param  ?array<FileEntity> $files
      */
     public function __construct(

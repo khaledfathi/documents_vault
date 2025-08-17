@@ -9,7 +9,8 @@ use App\Shared\Domain\Entities\DocumentEntity;
 class DocumentStorePresenter implements StoreDocumentOutput{
 
     private $data = [];
-    public function onSucess(DocumentEntity $document): void{
+    public function onSuccess(DocumentEntity $document): void{
+
         //repo store 
         $this->data['success'] =  'Document created successfully.'; 
         $this->data['document'] = $document; 
